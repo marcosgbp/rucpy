@@ -1,0 +1,28 @@
+# Archivos del entorno virtual de Python
+webscraper/rucpy-venv/
+webscraper/__pycache__/
+webscraper/logs/*
+!webscraper/logs/.gitkeep  # Mantener la carpeta logs vacía en Git
+
+# Archivos temporales y descomprimidos
+webscraper/temp/*
+webscraper/extracted/*
+# Archivos de configuración sensibles
+webscraper/.env
+
+# Archivos de Node.js
+backend/node_modules/
+backend/.env
+backend/.DS_Store
+
+# Archivos de React
+frontend/node_modules/
+frontend/build/
+frontend/.DS_Store
+
+# Archivos del sistema
+*.log
+*.sqlite3
+*.pyc
+.DS_Store
+.env
