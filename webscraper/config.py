@@ -5,13 +5,16 @@ from dotenv import load_dotenv
 # Cargar las variables de entorno desde el archivo .env
 load_dotenv()
 
-# Variables generales
-DOWNLOAD_URL = os.getenv("DOWNLOAD_URL")
-TEMP_DIR = os.getenv("TEMP_DIR")
-EXTRACT_DIR = os.getenv("EXTRACT_DIR")
-LOG_FILE = os.getenv("LOG_FILE")
+# URL principal de la página que contiene los enlaces de descarga
+PAGE_URL = os.getenv("PAGE_URL")
+BASE_URL = os.getenv("BASE_URL")
 
-# Configuración de la base de datos
+# Rutas de almacenamiento temporal
+TEMP_DIR = os.getenv("TEMP_DIR", "temp/")
+EXTRACT_DIR = os.getenv("EXTRACT_DIR", "extracted/")
+LOG_FILE = os.getenv("LOG_FILE", "logs/scraper.log")
+
+# Configuración de la base de datos MySQL
 DB_CONFIG = {
     "host": os.getenv("DB_HOST"),
     "user": os.getenv("DB_USER"),
@@ -19,6 +22,6 @@ DB_CONFIG = {
     "database": os.getenv("DB_NAME")
 }
 
-# Configuración de los archivos
-ENCODING = os.getenv("ENCODING")
-DELIMITER = os.getenv("DELIMITER")
+# Configuración general de los archivos
+ENCODING = os.getenv("ENCODING", "utf-8")
+DELIMITER = os.getenv("DELIMITER", "|")
